@@ -12,7 +12,8 @@ public class Util {
 	static File dbFile = null;
 	static {
 		try {
-			dbFile = new File("ROOT/Config.properties");
+			dbFile = new File("Config.properties");
+			// dbFile = new File("ROOT/Config.properties");
 			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
