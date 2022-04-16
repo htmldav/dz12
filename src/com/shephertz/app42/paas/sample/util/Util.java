@@ -12,9 +12,12 @@ public class Util {
 	static File dbFile = null;
 	static {
 		try {
-			dbFile = new File("/Config.properties");
-			// dbFile = new File("ROOT/Config.properties");
+			InputStream inputStream = getClass().getResourceAsStream("/ROOT/Config.properties");
+			dbFile = new File(new InputStreamReader(inputStream));
 			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
+			// --------------------------------------------
+			// dbFile = new File("ROOT/Config.properties");
+			// dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
