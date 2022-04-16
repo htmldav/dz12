@@ -35,23 +35,17 @@ public class DBManager {
 		try {
 			dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-			// String dbUrl = Util.getDBIp();
-			// String username = Util.getDBUser();
-			// String password = Util.getDBPassword();
-			// String dbName = Util.getDBName();
-			// int port = Util.getDBPort();
+			String dbUrl = Util.getDBIp();
+			String username = Util.getDBUser();
+			String password = Util.getDBPassword();
+			String dbName = Util.getDBName();
+			int port = Util.getDBPort();
 
-			// app42.paas.db.username = "acp4pogynvaeidfj"
-			// app42.paas.db.port = "8514"
-			// app42.paas.db.password = "jc31d2qyy7h9jv5jn1u9uosjksxzaizw"
-			// app42.paas.db.ip = "127.0.0.1"
-			// app42.paas.db.name = "dd"
-
-			String dbUrl = "127.0.0.1";
-			String username = "acp4pogynvaeidfj";
-			String password = "jc31d2qyy7h9jv5jn1u9uosjksxzaizw";
-			String dbName = "dd";
-			int port = 8514;
+			// String dbUrl = "127.0.0.1";
+			// String username = "acp4pogynvaeidfj";
+			// String password = "jc31d2qyy7h9jv5jn1u9uosjksxzaizw";
+			// String dbName = "dd";
+			// int port = 8514;
 
 			System.out.println("DBURL: " + dbUrl + " UserName: " + username
 					+ " Password: " + password + " Port: " + port + " DBName: "
