@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.*;
 import java.util.Properties;
 
-import org.appache.commons.io.FileUtils;
+import org.apache.commons.io.FileUtils;
 
 public class Util {
 
