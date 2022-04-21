@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.*;
 import java.util.Properties;
 
+import org.appache.commons.io.FileUtils;
+
 public class Util {
 
 	static Properties dbProps = new Properties();
