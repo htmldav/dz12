@@ -16,7 +16,8 @@ public class Util {
 	static {
 		try {
 			InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
-			dbFile = new File(new InputStreamReader(inputStream));
+			// dbFile = new File(new InputStreamReader(inputStream));
+			FileUtils.copyInputStreamToFile(inputStream, dbFile);
 			// dbProps.load(new InputStreamReader(inputStream));
 
 			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
