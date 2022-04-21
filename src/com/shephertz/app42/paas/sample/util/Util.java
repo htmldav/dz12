@@ -15,15 +15,15 @@ public class Util {
 	static File dbFile = null;
 	static {
 		try {
-			// InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
-			// dbFile = new File(new InputStreamReader(inputStream));
+			InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
+			dbFile = new File(new InputStreamReader(inputStream));
 			// dbProps.load(new InputStreamReader(inputStream));
 
-			// dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
+			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 
 			// --------------------------------------------
-			dbFile = new File("ROOT/Config.properties");
-			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
+			// dbFile = new File("ROOT/Config.properties");
+			// dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
