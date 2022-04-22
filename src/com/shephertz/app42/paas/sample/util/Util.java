@@ -11,6 +11,14 @@ import java.util.Properties;
 
 public class Util {
 
+	// public final void whenConvertingInputStreamToFile_thenCorrect4() throws IOException {
+    //     final InputStream initialStream = FileUtils.openInputStream(new File("src/test/resources/sample.txt"));
+
+    //     final File targetFile = new File("src/test/resources/targetFile.tmp");
+
+    //     FileUtils.copyInputStreamToFile(initialStream, targetFile);
+    // }
+
 	static Properties dbProps = new Properties();
 	static File dbFile = null;
 	static {
