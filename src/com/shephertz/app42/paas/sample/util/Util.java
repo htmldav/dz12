@@ -2,12 +2,14 @@ package com.shephertz.app42.paas.sample.util;
 
 import java.io.File;
 import java.io.FileInputStream;
-// import java.io.InputStream;
-// import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-// import java.io.*;
+import java.io.*;
 import java.util.Properties;
+
+// import org.apache.commons.io.FileUtils;
 
 public class Util {
 
@@ -23,15 +25,20 @@ public class Util {
 	static File dbFile = null;
 	static {
 		try {
-			// InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
+			InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
 			// dbFile = new File(new InputStreamReader(inputStream));
+
+			// FileUtils.copyInputStreamToFile(inputStream, dbFile);
+
+			Files.copy(inputStream, dbFile, StandardCopyOption.REPLACE_EXISTING);
+
 			// dbProps.load(new InputStreamReader(inputStream));
 
-			// dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
+			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 
 			// --------------------------------------------
-			dbFile = new File("ROOT/Config.properties");
-			dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
+			// dbFile = new File("ROOT/Config.properties");
+			// dbProps.load(new FileInputStream(dbFile.getAbsolutePath()));
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
