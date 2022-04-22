@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.*;
 import java.util.Properties;
 
-// import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FileUtils;
 
 public class Util {
 
@@ -25,12 +25,16 @@ public class Util {
 	static File dbFile = null;
 	static {
 		try {
-			InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
+			final InputStream initialStream = FileUtils.openInputStream(new File("ROOT/Config.properties"));
+			final File dbFile = new File("targetFile.tmp");
+			FileUtils.copyInputStreamToFile(initialStream, dbFile);
+			
+			// InputStream inputStream = InputStream.class.getResourceAsStream("/ROOT/Config.properties");
 			// dbFile = new File(new InputStreamReader(inputStream));
 
 			// FileUtils.copyInputStreamToFile(inputStream, dbFile);
 
-			Files.copy(inputStream, dbFile, StandardCopyOption.REPLACE_EXISTING);
+			// Files.copy(inputStream, dbFile, StandardCopyOption.REPLACE_EXISTING);
 
 			// dbProps.load(new InputStreamReader(inputStream));
 
